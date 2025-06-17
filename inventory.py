@@ -1,0 +1,1 @@
+#inventory class for csv management

@@ -1,0 +1,101 @@
+id,name,price,quantity,category
+1,Apple,0.50,100,Fruit
+2,Banana,0.30,120,Fruit
+3,Orange,0.60,80,Fruit
+4,Mango,1.20,60,Fruit
+5,Grapes,1.50,90,Fruit
+6,Strawberry,1.80,50,Fruit
+7,Pineapple,2.00,40,Fruit
+8,Watermelon,3.50,30,Fruit
+9,Kiwi,0.90,75,Fruit
+10,Lemon,0.20,100,Fruit
+11,Carrot,0.25,90,Vegetable
+12,Tomato,0.40,100,Vegetable
+13,Onion,0.35,110,Vegetable
+14,Potato,0.30,130,Vegetable
+15,Cucumber,0.50,85,Vegetable
+16,Broccoli,0.70,60,Vegetable
+17,Spinach,0.60,70,Vegetable
+18,Lettuce,0.80,50,Vegetable
+19,Garlic,0.10,200,Vegetable
+20,Chili,0.15,150,Vegetable
+21,Milk,1.50,50,Dairy
+22,Cheese,2.00,40,Dairy
+23,Yogurt,0.80,60,Dairy
+24,Eggs,2.50,30,Dairy
+25,Butter,1.80,35,Dairy
+26,Cream,1.90,40,Dairy
+27,Paneer,2.10,25,Dairy
+28,Ghee,3.00,20,Dairy
+29,Bread,1.20,70,Bakery
+30,Bun,0.60,80,Bakery
+31,White Bread,1.30,60,Bakery
+32,Brown Bread,1.40,55,Bakery
+33,Garlic Bread,2.20,30,Bakery
+34,Baguette,2.50,25,Bakery
+35,Rice,0.90,100,Grain
+36,Pasta,1.10,60,Grain
+37,Flour,1.00,75,Baking
+38,Oil,2.20,40,Baking
+39,Sugar,0.80,90,Baking
+40,Salt,0.50,100,Baking
+41,Baking Powder,0.70,30,Baking
+42,Yeast,1.00,20,Baking
+43,Oats,1.30,50,Grain
+44,Cornflakes,1.60,40,Grain
+45,Chips,1.00,100,Snacks
+46,Chocolate,1.50,80,Snacks
+47,Cookies,1.30,60,Snacks
+48,Biscuits,0.90,100,Snacks
+49,Nuts,2.50,40,Snacks
+50,Popcorn,1.20,55,Snacks
+51,Juice,2.00,50,Beverages
+52,Soda,1.00,70,Beverages
+53,Water Bottle,0.70,100,Beverages
+54,Energy Drink,2.20,40,Beverages
+55,Coffee,2.50,35,Beverages
+56,Tea,1.80,50,Beverages
+57,Green Tea,2.00,45,Beverages
+58,Toothpaste,1.90,40,Household
+59,Toothbrush,0.80,60,Household
+60,Soap,0.80,60,Household
+61,Shampoo,2.50,30,Household
+62,Conditioner,2.70,25,Household
+63,Laundry Detergent,5.00,20,Household
+64,Hand Wash,1.20,50,Household
+65,Dish Soap,1.50,40,Household
+66,Disinfectant,3.00,25,Household
+67,Broom,2.00,15,Household
+68,Floor Cleaner,3.50,20,Household
+69,Trash Bags,1.00,50,Household
+70,Tissues,0.90,60,Household
+71,Paper Towels,1.20,40,Household
+72,Toilet Paper,0.80,80,Household
+73,Aluminum Foil,1.50,30,Kitchen
+74,Plastic Wrap,1.40,35,Kitchen
+75,Freezer Bags,2.00,25,Kitchen
+76,Cooking Spray,1.60,20,Kitchen
+77,Spaghetti,1.20,50,Grain
+78,Macaroni,1.10,45,Grain
+79,Tomato Sauce,1.30,40,Condiments
+80,Mayonnaise,1.80,30,Condiments
+81,Ketchup,1.50,35,Condiments
+82,Mustard,1.40,30,Condiments
+83,Jam,2.00,25,Condiments
+84,Honey,2.50,20,Condiments
+85,Peanut Butter,2.80,22,Condiments
+86,Soy Sauce,1.70,28,Condiments
+87,Vinegar,1.20,32,Condiments
+88,Canned Beans,1.10,40,Canned
+89,Canned Corn,1.00,35,Canned
+90,Canned Tuna,1.50,30,Canned
+91,Canned Tomatoes,1.20,40,Canned
+92,Instant Noodles,0.80,100,Snacks
+93,Cereal Bars,1.00,60,Snacks
+94,Granola,1.60,50,Snacks
+95,Raisins,1.30,55,Dry Fruit
+96,Dates,1.50,45,Dry Fruit
+97,Almonds,2.70,35,Dry Fruit
+98,Walnuts,2.90,30,Dry Fruit
+99,Pistachios,3.00,28,Dry Fruit
+100,Detergent Pods,5.50,15,Household
