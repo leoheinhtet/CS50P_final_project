@@ -3,7 +3,7 @@ class Item:
     def __init__(self, name: str, price: float, quantity: int):
         self.name = name
         self.price = price
-        self.quantiy = quantity
+        self.quantity = quantity
     #validating for name
     @property
     def name(self):
@@ -26,12 +26,12 @@ class Item:
     #validating for quantity
     @property
     def quantity(self):
-        return self._quantity
+        return self.__quantity
     @quantity.setter
     def quantity(self, value: int):
         if not isinstance(value, int) or value <0:
             raise ValueError("Quantity must be a non-negative integer.")
-
+        self.__quantity = value
     
     def __str__(self):
         return f"{self.name}: ${self.price:.2f} (Qty: {self.quantity})"   
