@@ -33,6 +33,7 @@ class Item:
             raise ValueError("Quantity must be a non-negative integer.")
 
     
-        
+    def __str__(self):
+        return f"{self.name}: ${self.price:.2f} (Qty: {self.quantity})"   
     
     
