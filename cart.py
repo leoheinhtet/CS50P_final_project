@@ -1,38 +1,37 @@
 #cart class to store items
 class Cart:
     def __init__(self):
+        self.items = {} # key: item.id, value: (Item, quantity)
 
-        self.items = []
-    def add_item(self, item):
-        """Add an item to the cart."""
-        for i in self.items:
-            if i["name"].lower()== item["name"].lower():
-                i["quantity"] += item["quantity"]
-                return
-        self.items.append(item)
+    def add_item(self, item, quantity):
+        if item in self.items:
+            self.items[item.id][1] += quantity
+        self.items[item.id] = (item, quantity)
 
-    def remove_item(self, item_name):
-        """Remove an item from the cart by name."""
-        self.items = [item for item in self.items if item["name"].lower() != item_name.lower()]
-
+    def remove_item(self, item):
+        if item.id in self.items:
+            del self.items[item.id]
+        else:
+            raise ValueError("Item not found in cart")
+        
+    def get_items(self):
+        return self.items.values()
+    
     def clear(self):
-        """Clear the cart."""
-        self.items = []
+        self.items.clear()
 
-    def get_total(self):
-        """Calculate the total price of items in the cart."""
+    def total_price(self):
         total = 0
-        for item in self.items:
-            total += item["price"] * item["quantity"]
+        for item, quantity in self.items.values():
+            total += item.price * quantity
         return total
     
-    def is_empty(self):
-        """Check if the cart is empty."""
-        return len(self.items) == 0
-    
     def __str__(self):
-        """Return a string representation of the cart."""
-        if self.is_empty():
-            return "Your cart is empty"
-        return "\n".join([f'{item["name"]}: {item["quantity"]} x ${item["price"]:.2f} =  ${item["quantity"] * item["price"]:.2f}' for item in self.items])
+        if len(self.items) == 0:
+            return "Your cart is empty."
+        items_str = []
+        for item, quantity in self.items.values():
+            items_str.append(f"{item.name}:  {quantity} @ ${item.price:.2f}each")
+
+        return "\n".join(items_str)
     
