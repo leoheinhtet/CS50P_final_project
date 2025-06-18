@@ -1,9 +1,20 @@
 #item class with validation
 class Item:
-    def __init__(self, name: str, price: float, quantity: int):
+    def __init__(self, id: int, name: str, price: float, quantity: int, category: str = None):
+        self.id = id
         self.name = name
         self.price = price
         self.quantity = quantity
+        self.category = category
+    #validating for id
+    @property
+    def id(self):
+        return self.__id
+    @id.setter
+    def id(self, value: int):
+        if not isinstance(value, int) or value < 0:
+            raise ValueError("ID must be a non-negative integer.")
+        self.__id = value
     #validating for name
     @property
     def name(self):
@@ -32,8 +43,17 @@ class Item:
         if not isinstance(value, int) or value <0:
             raise ValueError("Quantity must be a non-negative integer.")
         self.__quantity = value
+
+    #validating for category
+    @property
+    def category(self):
+        return self.__category
+    @category.setter
+    def category(self, value: str):
+        if value is not None and not isinstance(value, str):
+            raise ValueError("Category must be a string or None.")
+        self.__category = value.strip() if value else None
     
-    def __str__(self):
-        return f"{self.name}: ${self.price:.2f} (Qty: {self.quantity})"   
+     
     
     
