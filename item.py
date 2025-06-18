@@ -31,7 +31,7 @@ class Item:
     @price.setter
     def price(self, value: float):
         if not isinstance(value, (int, float)) or value <0:
-            raise ValueError("Price must be a non-negatice number")
+            raise ValueError("Price must be a non-negative number")
         self.__price = float(value)
 
     #validating for quantity

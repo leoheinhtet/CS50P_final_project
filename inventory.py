@@ -7,7 +7,7 @@ class Inventory:
         """Initialize the inventory with a CSV file."""
         self.filename = filename
         self.stock = {}
-        self.stock = self.load_inventory()
+        self.load_inventory()
 
     def load_inventory(self):
         """Load items from the CSV file into the inventory."""
@@ -17,10 +17,10 @@ class Inventory:
                 reader = csv.DictReader(file)
                 for row in reader:
                     item = Item(
-                        id = row['id'],
+                        id = int(row['id']),
                         name = row['name'],
-                        price = row['price'],
-                        quantity = row['quantity'],
+                        price = float(row['price']),
+                        quantity = int(row['quantity']),
                         category = row['category'])
                     self.stock[item.id] = item
                     
@@ -60,11 +60,16 @@ class Inventory:
                     'category': item.category
                 })
 
-    def __str__(self):
-        return "\n".join(str(item) for item in self.stock.values())
+    def display_items(self):
+        if not self.stock:
+            print("No items in inventory.")
+            return
 
-    
-    
-        
+        print(f"{'ID':<4} {'Name':<20} {'Price($)':<10} {'Qty':<6} {'Category'}")
+        print("-" * 60)
+        for item in self.stock.values():
+            print(f"{item.id:<4} {item.name:<20} {item.price:<10.2f} {item.quantity:<6} {item.category}")
 
-                    
+
+
+

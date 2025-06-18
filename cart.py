@@ -6,7 +6,8 @@ class Cart:
     def add_item(self, item, quantity):
         if item in self.items:
             self.items[item.id][1] += quantity
-        self.items[item.id] = (item, quantity)
+        else:
+            self.items[item.id] = (item, quantity)
 
     def remove_item(self, item):
         if item.id in self.items:
