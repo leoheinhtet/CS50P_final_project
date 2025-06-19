@@ -17,7 +17,7 @@ def main():
             choice = int(input("Enter your choice (1-5): "))
 
             if choice == 1:
-                inventory.display_items()
+                inventory.display_items(cart)
 
             elif choice == 2:
                 item_id = int(input("Enter the item ID to add to cart: "))

@@ -59,7 +59,7 @@ class Inventory:
                     'category': item.category
                 })
 
-    def display_items(self):
+    def display_items(self, cart=None):
         if not self.stock:
             print("No items in inventory.")
             return
@@ -67,7 +67,11 @@ class Inventory:
         print(f"{'ID':<4} {'Name':<20} {'Price($)':<10} {'Qty':<6} {'Category'}")
         print("-" * 60)
         for item in self.stock.values():
-            print(f"{item.id:<4} {item.name:<20} {item.price:<10.2f} {item.quantity:<6} {item.category}")
+            reserved = 0
+            if cart and item.id in cart.items:
+                reserved = cart.items[item.id][1]  # quantity in cart
+            available = item.quantity - reserved
+            print(f"{item.id:<4} {item.name:<20} {item.price:<10.2f} {available:<10} {item.category}")
 
 
 
