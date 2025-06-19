@@ -24,12 +24,15 @@ def main():
                 amount = int(input("Enter the quantity to add: "))
                 item = inventory.get_item(item_id)
                 if item:
-                    if inventory.is_in_stock(item_id, amount):
+                    existing_qty = cart.items.get(item_id, [item, 0])[1]
+                    total_requested = existing_qty + amount
+                    if inventory.is_in_stock(item_id, total_requested):
                         cart.add_item(item, amount)
-                        inventory.update_stock(item_id, amount)
+                        
                         print(f"Added {amount} of {item.name} to cart.")
                     else:
-                       print("Not enough stock available for this item.")
+                        print(f"Only {item.quantity} in stock. Cannot add {total_requested}.")
+                    
                 else:
                     print("Item not found in inventory.")
 
@@ -43,9 +46,12 @@ def main():
                     print("Checking out...")
                 
                         
+                    
+                    for item, quantity in cart.get_items():
+                        inventory.update_stock(item.id, quantity)
                     print(f"Total price: ${cart.total_price():.2f}")
                     cart.clear()
-                    inventory.save() # update inventory after checkout
+                    inventory.save() # update inventory.csv after checkout
                     print("Thank you for your purchase!")
                         
                     
