@@ -40,12 +40,11 @@ class Inventory:
     
     def update_stock(self, item_id, amount):
         """Update the stock of an item by its ID."""
-        if self.is_in_stock(item_id, amount):
+        
 
-            item = self.get_item(item_id)
-            item.quantity -= amount
-        else:
-            raise  ValueError("Not enough stock available for this item.")
+        item = self.get_item(item_id)
+        item.quantity -= amount
+        
         
     def save(self):
         with open(self.filename, 'w', newline='', encoding='utf-8') as file:

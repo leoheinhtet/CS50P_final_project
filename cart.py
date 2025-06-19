@@ -4,7 +4,7 @@ class Cart:
         self.items = {} # key: item.id, value: (Item, quantity)
 
     def add_item(self, item, quantity):
-        if item in self.items:
+        if item.id in self.items:
             self.items[item.id][1] += quantity
         else:
             self.items[item.id] = (item, quantity)
@@ -32,7 +32,7 @@ class Cart:
             return "Your cart is empty."
         items_str = []
         for item, quantity in self.items.values():
-            items_str.append(f"{item.name}:  {quantity} @ ${item.price:.2f}each")
+            items_str.append(f"{item.name}:  {quantity} @ ${item.price:.2f} each")
 
         return "\n".join(items_str)
     

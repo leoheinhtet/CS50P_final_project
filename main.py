@@ -29,7 +29,9 @@ def main():
                         inventory.update_stock(item_id, amount)
                         print(f"Added {amount} of {item.name} to cart.")
                     else:
-                        print("Not enough stock available for this item.")
+                       print("Not enough stock available for this item.")
+                else:
+                    print("Item not found in inventory.")
 
             elif choice == 3:
                 print(cart)
@@ -39,14 +41,14 @@ def main():
                     print("Your cart is empty. Please add items before checking out.")
                 else:
                     print("Checking out...")
-                    try:
-                        for item, quantity in cart.get_items():
-                            inventory.update_stock(item.id, quantity)
-                        print(f"Total price: ${cart.total_price():.2f}")
-                        cart.clear()
-                        print("Thank you for your purchase!")
-                    except ValueError as e:
-                        print(f"Error during checkout: {e}")
+                
+                        
+                    print(f"Total price: ${cart.total_price():.2f}")
+                    cart.clear()
+                    inventory.save() # update inventory after checkout
+                    print("Thank you for your purchase!")
+                        
+                    
             
             elif choice == 5:
                 print("Exiting the store. Thank you!")
