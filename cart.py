@@ -1,13 +1,13 @@
 #cart class to store items
 class Cart:
     def __init__(self):
-        self.items = {} # key: item.id, value: (Item, quantity)
+        self.items = {} # key: item.id, value: [Item, quantity]
 
     def add_item(self, item, quantity):
         if item.id in self.items:
             self.items[item.id][1] += quantity
         else:
-            self.items[item.id] = (item, quantity)
+            self.items[item.id] = [item, quantity]
 
     def remove_item(self, item):
         if item.id in self.items:
