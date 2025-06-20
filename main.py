@@ -28,10 +28,11 @@ def main():
             print("Menu:")
             print("1. View Items")
             print("2. Add Item to Cart")
-            print("3. View Cart")
-            print("4. Checkout")
-            print("5. Exit")
-            choice = int(input("Enter your choice (1-5): "))
+            print("3. Remove Item from Cart")
+            print("4. View Cart")
+            print("5. Checkout")
+            print("6. Exit")
+            choice = int(input("Enter your choice (1-6): "))
 
             if choice == 1:
                 inventory.display_items(cart)
@@ -55,8 +56,19 @@ def main():
 
             elif choice == 3:
                 print(cart)
+                try:
+                    reduce_item_id= int(input("Enter the item ID to remove from cart: "))
+                    reduce_amount = int(input("Enter the quantity to remove: "))
+                    cart.remove_item(reduce_item_id, reduce_amount)
+                except ValueError as e:
+                    print(f"Error: {e}")
+                
+                
 
             elif choice == 4:
+                print(cart)
+
+            elif choice == 5:
                 if not cart.get_items():
                     print("Your cart is empty. Please add items before checking out.")
                 else:
@@ -90,7 +102,7 @@ def main():
                         
                     
             
-            elif choice == 5:
+            elif choice == 6:
                 print("Exiting the store. Thank you!")
                 break
 

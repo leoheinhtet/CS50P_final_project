@@ -9,9 +9,15 @@ class Cart:
         else:
             self.items[item.id] = [item, quantity]
 
-    def remove_item(self, item):
-        if item.id in self.items:
-            del self.items[item.id]
+    def remove_item(self, item_id, quantity):
+        if item_id in self.items:
+            item, current_quantity = self.items[item_id]
+            if quantity >= current_quantity:
+                del self.items[item_id]
+                print(f"Removed all {item.name} from cart.")
+            else:
+                self.items[item_id][1] -= quantity
+                print(f"Reduced {item.name} by {quantity}. Remaining: {self.items[item_id][1]}")
         else:
             raise ValueError("Item not found in cart")
         
@@ -32,7 +38,7 @@ class Cart:
             return "Your cart is empty."
         items_str = []
         for item, quantity in self.items.values():
-            items_str.append(f"{item.name}:  {quantity} @ ${item.price:.2f} each")
+            items_str.append(f"Item_Id:{item.id}  {item.name}:  {quantity} @ ${item.price:.2f} each")
 
         return "\n".join(items_str)
     
