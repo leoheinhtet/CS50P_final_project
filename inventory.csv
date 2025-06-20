@@ -8,7 +8,7 @@ id,name,price,quantity,category
 7,Pineapple,2.0,40,Fruit
 8,Watermelon,3.5,30,Fruit
 9,Kiwi,0.9,75,Fruit
-10,Lemon,0.2,100,Fruit
+10,Lemon,0.2,85,Fruit
 11,Carrot,0.25,90,Vegetable
 12,Tomato,0.4,100,Vegetable
 13,Onion,0.35,110,Vegetable
@@ -97,5 +97,5 @@ id,name,price,quantity,category
 96,Dates,1.5,45,Dry Fruit
 97,Almonds,2.7,35,Dry Fruit
 98,Walnuts,2.9,30,Dry Fruit
-99,Pistachios,3.0,25,Dry Fruit
+99,Pistachios,3.0,45,Dry Fruit
 100,Detergent Pods,5.5,30,Household
