@@ -96,24 +96,13 @@ def main():
                         inventory.save()
                     except Exception as e:
                         print(f"An error occurred during checkout: {e}")
-                    
-                                 
-                    
-                        
-                    
-            
+                                                     
             elif choice == 6:
                 print("Exiting the store. Thank you!")
                 break
 
         except ValueError as e:
             print(f"Invalid input: {e}")
-
-
-
-    
-    
-
 
 if __name__ == "__main__":
     main()  
